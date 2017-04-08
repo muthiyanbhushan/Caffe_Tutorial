@@ -1,0 +1,132 @@
+	
+ResNet-18 ImageNet	
+Operations estimation for image size: 256 x 256	
+
+-----------------------------------------------------------------------------------------------	
+S.No. Module Name                       Input Resolution     Neurons             Ops     % Ops	
+===============================================================================================	
+    1 nn.Sequential                    1 x 3 x 256 x 256      196608               0    0.0000	
+    2 nn.SpatialConvolution            1 x 3 x 256 x 256      196608       309329920    6.5091	
+    3 nn.SpatialBatchNormalization    1 x 64 x 128 x 128     1048576               0    0.0000	
+    4 nn.ReLU                         1 x 64 x 128 x 128     1048576         1048576    0.0221	
+    5 nn.SpatialMaxPooling            1 x 64 x 128 x 128     1048576         2359296    0.0496	
+    6 nn.Sequential                     1 x 64 x 64 x 64      262144               0    0.0000	
+    7 nn.Sequential                     1 x 64 x 64 x 64      262144               0    0.0000	
+    8 nn.ConcatTable                    1 x 64 x 64 x 64      262144               0    0.0000	
+    9 nn.Sequential                     1 x 64 x 64 x 64      262144               0    0.0000	
+   10 nn.SpatialConvolution             1 x 64 x 64 x 64      262144       302252032    6.3602	
+   11 nn.SpatialBatchNormalization      1 x 64 x 64 x 64      262144               0    0.0000	
+   12 nn.ReLU                           1 x 64 x 64 x 64      262144          262144    0.0055	
+   13 nn.SpatialConvolution             1 x 64 x 64 x 64      262144       302252032    6.3602	
+   14 nn.SpatialBatchNormalization      1 x 64 x 64 x 64      262144               0    0.0000	
+   15 nn.Identity                       1 x 64 x 64 x 64      262144               0    0.0000	
+   16 nn.CAddTable                                     0           0          524288    0.0110	
+   17 nn.ReLU                           1 x 64 x 64 x 64      262144          262144    0.0055	
+   18 nn.Sequential                     1 x 64 x 64 x 64      262144               0    0.0000	
+   19 nn.ConcatTable                    1 x 64 x 64 x 64      262144               0    0.0000	
+   20 nn.Sequential                     1 x 64 x 64 x 64      262144               0    0.0000	
+   21 nn.SpatialConvolution             1 x 64 x 64 x 64      262144       302252032    6.3602	
+   22 nn.SpatialBatchNormalization      1 x 64 x 64 x 64      262144               0    0.0000	
+   23 nn.ReLU                           1 x 64 x 64 x 64      262144          262144    0.0055	
+   24 nn.SpatialConvolution             1 x 64 x 64 x 64      262144       302252032    6.3602	
+   25 nn.SpatialBatchNormalization      1 x 64 x 64 x 64      262144               0    0.0000	
+   26 nn.Identity                       1 x 64 x 64 x 64      262144               0    0.0000	
+   27 nn.CAddTable                                     0           0          524288    0.0110	
+   28 nn.ReLU                           1 x 64 x 64 x 64      262144          262144    0.0055	
+   29 nn.Sequential                     1 x 64 x 64 x 64      262144               0    0.0000	
+   30 nn.Sequential                     1 x 64 x 64 x 64      262144               0    0.0000	
+   31 nn.ConcatTable                    1 x 64 x 64 x 64      262144               0    0.0000	
+   32 nn.Sequential                     1 x 64 x 64 x 64      262144               0    0.0000	
+   33 nn.SpatialConvolution             1 x 64 x 64 x 64      262144       151126016    3.1801	
+   34 nn.SpatialBatchNormalization     1 x 128 x 32 x 32      131072               0    0.0000	
+   35 nn.ReLU                          1 x 128 x 32 x 32      131072          131072    0.0028	
+   36 nn.SpatialConvolution            1 x 128 x 32 x 32      131072       302120960    6.3574	
+   37 nn.SpatialBatchNormalization     1 x 128 x 32 x 32      131072               0    0.0000	
+   38 nn.Sequential                     1 x 64 x 64 x 64      262144               0    0.0000	
+   39 nn.SpatialConvolution             1 x 64 x 64 x 64      262144        16908288    0.3558	
+   40 nn.SpatialBatchNormalization     1 x 128 x 32 x 32      131072               0    0.0000	
+   41 nn.CAddTable                                     0           0          262144    0.0055	
+   42 nn.ReLU                          1 x 128 x 32 x 32      131072          131072    0.0028	
+   43 nn.Sequential                    1 x 128 x 32 x 32      131072               0    0.0000	
+   44 nn.ConcatTable                   1 x 128 x 32 x 32      131072               0    0.0000	
+   45 nn.Sequential                    1 x 128 x 32 x 32      131072               0    0.0000	
+   46 nn.SpatialConvolution            1 x 128 x 32 x 32      131072       302120960    6.3574	
+   47 nn.SpatialBatchNormalization     1 x 128 x 32 x 32      131072               0    0.0000	
+   48 nn.ReLU                          1 x 128 x 32 x 32      131072          131072    0.0028	
+   49 nn.SpatialConvolution            1 x 128 x 32 x 32      131072       302120960    6.3574	
+   50 nn.SpatialBatchNormalization     1 x 128 x 32 x 32      131072               0    0.0000	
+   51 nn.Identity                      1 x 128 x 32 x 32      131072               0    0.0000	
+   52 nn.CAddTable                                     0           0          262144    0.0055	
+   53 nn.ReLU                          1 x 128 x 32 x 32      131072          131072    0.0028	
+   54 nn.Sequential                    1 x 128 x 32 x 32      131072               0    0.0000	
+   55 nn.Sequential                    1 x 128 x 32 x 32      131072               0    0.0000	
+   56 nn.ConcatTable                   1 x 128 x 32 x 32      131072               0    0.0000	
+   57 nn.Sequential                    1 x 128 x 32 x 32      131072               0    0.0000	
+   58 nn.SpatialConvolution            1 x 128 x 32 x 32      131072       151060480    3.1787	
+   59 nn.SpatialBatchNormalization     1 x 256 x 16 x 16       65536               0    0.0000	
+   60 nn.ReLU                          1 x 256 x 16 x 16       65536           65536    0.0014	
+   61 nn.SpatialConvolution            1 x 256 x 16 x 16       65536       302055424    6.3560	
+   62 nn.SpatialBatchNormalization     1 x 256 x 16 x 16       65536               0    0.0000	
+   63 nn.Sequential                    1 x 128 x 32 x 32      131072               0    0.0000	
+   64 nn.SpatialConvolution            1 x 128 x 32 x 32      131072        16842752    0.3544	
+   65 nn.SpatialBatchNormalization     1 x 256 x 16 x 16       65536               0    0.0000	
+   66 nn.CAddTable                                     0           0          131072    0.0028	
+   67 nn.ReLU                          1 x 256 x 16 x 16       65536           65536    0.0014	
+   68 nn.Sequential                    1 x 256 x 16 x 16       65536               0    0.0000	
+   69 nn.ConcatTable                   1 x 256 x 16 x 16       65536               0    0.0000	
+   70 nn.Sequential                    1 x 256 x 16 x 16       65536               0    0.0000	
+   71 nn.SpatialConvolution            1 x 256 x 16 x 16       65536       302055424    6.3560	
+   72 nn.SpatialBatchNormalization     1 x 256 x 16 x 16       65536               0    0.0000	
+   73 nn.ReLU                          1 x 256 x 16 x 16       65536           65536    0.0014	
+   74 nn.SpatialConvolution            1 x 256 x 16 x 16       65536       302055424    6.3560	
+   75 nn.SpatialBatchNormalization     1 x 256 x 16 x 16       65536               0    0.0000	
+   76 nn.Identity                      1 x 256 x 16 x 16       65536               0    0.0000	
+   77 nn.CAddTable                                     0           0          131072    0.0028	
+   78 nn.ReLU                          1 x 256 x 16 x 16       65536           65536    0.0014	
+   79 nn.Sequential                    1 x 256 x 16 x 16       65536               0    0.0000	
+   80 nn.Sequential                    1 x 256 x 16 x 16       65536               0    0.0000	
+   81 nn.ConcatTable                   1 x 256 x 16 x 16       65536               0    0.0000	
+   82 nn.Sequential                    1 x 256 x 16 x 16       65536               0    0.0000	
+   83 nn.SpatialConvolution            1 x 256 x 16 x 16       65536       151027712    3.1780	
+   84 nn.SpatialBatchNormalization       1 x 512 x 8 x 8       32768               0    0.0000	
+   85 nn.ReLU                            1 x 512 x 8 x 8       32768           32768    0.0007	
+   86 nn.SpatialConvolution              1 x 512 x 8 x 8       32768       302022656    6.3554	
+   87 nn.SpatialBatchNormalization       1 x 512 x 8 x 8       32768               0    0.0000	
+   88 nn.Sequential                    1 x 256 x 16 x 16       65536               0    0.0000	
+   89 nn.SpatialConvolution            1 x 256 x 16 x 16       65536        16809984    0.3537	
+   90 nn.SpatialBatchNormalization       1 x 512 x 8 x 8       32768               0    0.0000	
+   91 nn.CAddTable                                     0           0           65536    0.0014	
+   92 nn.ReLU                            1 x 512 x 8 x 8       32768           32768    0.0007	
+   93 nn.Sequential                      1 x 512 x 8 x 8       32768               0    0.0000	
+   94 nn.ConcatTable                     1 x 512 x 8 x 8       32768               0    0.0000	
+   95 nn.Sequential                      1 x 512 x 8 x 8       32768               0    0.0000	
+   96 nn.SpatialConvolution              1 x 512 x 8 x 8       32768       302022656    6.3554	
+   97 nn.SpatialBatchNormalization       1 x 512 x 8 x 8       32768               0    0.0000	
+   98 nn.ReLU                            1 x 512 x 8 x 8       32768           32768    0.0007	
+   99 nn.SpatialConvolution              1 x 512 x 8 x 8       32768       302022656    6.3554	
+  100 nn.SpatialBatchNormalization       1 x 512 x 8 x 8       32768               0    0.0000	
+  101 nn.Identity                        1 x 512 x 8 x 8       32768               0    0.0000	
+  102 nn.CAddTable                                     0           0           65536    0.0014	
+  103 nn.ReLU                            1 x 512 x 8 x 8       32768           32768    0.0007	
+  104 nn.SpatialAveragePooling           1 x 512 x 8 x 8       32768          100352    0.0021	
+  105 nn.View                            1 x 512 x 2 x 2        2048               0    0.0000	
+  106 nn.Linear                                  4 x 512        2048         4100000    0.0863	
+-----------------------------------------------------------------------------------------------	
+   Total number of trainable parameters : 11694312 	
+   Total number of neurons              : 15962112	
+-----------------------------------------------------------------------------------------------	
+* Operations per common module *	
+   + nn.CAddTable                       : 1.9661e+06 Ops	
+   + nn.Linear                          : 4.1000e+06 Ops	
+   + nn.SpatialConvolution              : 4.7407e+09 Ops	
+   + nn.SpatialAveragePooling           : 1.0035e+05 Ops	
+   + nn.ReLU                            : 3.0147e+06 Ops	
+   + nn.SpatialMaxPooling               : 2.3593e+06 Ops	
+     Total                              : 4.7523e+09 Ops	
+===============================================================================================	
+Profiling models/resnet.lua, 1000 iterations	
+ [======================================== 1000/1000 ==================================>]  Tot: 3m16s | Step: 211ms     
+   Forward average time on THIS CPU : 197.01 ms	
+   Performance for THIS CPU         : 24.12 G-Ops/s
+	
+

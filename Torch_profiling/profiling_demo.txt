@@ -1,0 +1,2 @@
+bhushan@bhushan-Inspiron-5558:~/Torch7-profiling$ th profile-model.lua --model models/model1.lua --res 1x3x1024x1024 --MACs
+

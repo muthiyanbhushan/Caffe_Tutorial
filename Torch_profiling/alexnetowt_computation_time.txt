@@ -1,0 +1,47 @@
+Operations estimation for image size: 224 x 224	
+
+-----------------------------------------------------------------------------------------------	
+S.No. Module Name                       Input Resolution     Neurons             Ops     % Ops	
+===============================================================================================	
+    1 nn.Sequential                    1 x 3 x 224 x 224      150528               0    0.0000	
+    2 nn.Sequential                    1 x 3 x 224 x 224      150528               0    0.0000	
+    3 nn.SpatialConvolution            1 x 3 x 224 x 224      150528       140747200    9.8413	
+    4 nn.ReLU                           1 x 64 x 55 x 55      193600          193600    0.0135	
+    5 nn.SpatialMaxPooling              1 x 64 x 55 x 55      193600          419904    0.0294	
+    6 nn.SpatialConvolution             1 x 64 x 27 x 27       46656       448037568   31.3277	
+    7 nn.ReLU                          1 x 192 x 27 x 27      139968          139968    0.0098	
+    8 nn.SpatialMaxPooling             1 x 192 x 27 x 27      139968          292032    0.0204	
+    9 nn.SpatialConvolution            1 x 192 x 13 x 13       32448       224345472   15.6867	
+   10 nn.ReLU                          1 x 384 x 13 x 13       64896           64896    0.0045	
+   11 nn.SpatialConvolution            1 x 384 x 13 x 13       64896       299084032   20.9126	
+   12 nn.ReLU                          1 x 256 x 13 x 13       43264           43264    0.0030	
+   13 nn.SpatialConvolution            1 x 256 x 13 x 13       43264       199403776   13.9427	
+   14 nn.ReLU                          1 x 256 x 13 x 13       43264           43264    0.0030	
+   15 nn.SpatialMaxPooling             1 x 256 x 13 x 13       43264           82944    0.0058	
+   16 nn.Sequential                      1 x 256 x 6 x 6        9216               0    0.0000	
+   17 nn.View                            1 x 256 x 6 x 6        9216               0    0.0000	
+   18 nn.Dropout                                    9216        9216               0    0.0000	
+   19 nn.Linear                                     9216        9216        75501568    5.2792	
+   20 nn.ReLU                                       4096        4096            4096    0.0003	
+   21 nn.Dropout                                    4096        4096               0    0.0000	
+   22 nn.Linear                                     4096        4096        33558528    2.3465	
+   23 nn.ReLU                                       4096        4096            4096    0.0003	
+   24 nn.Linear                                     4096        4096         8193000    0.5729	
+   25 nn.LogSoftMax                                 1000        1000            3000    0.0002	
+-----------------------------------------------------------------------------------------------	
+   Total number of trainable parameters : 61100840 	
+   Total number of neurons              : 1559016	
+-----------------------------------------------------------------------------------------------	
+* Operations per common module *	
+   + nn.ReLU                            : 4.9318e+05 Ops	
+   + nn.LogSoftMax                      : 3.0000e+03 Ops	
+   + nn.SpatialConvolution              : 1.3116e+09 Ops	
+   + nn.Linear                          : 1.1725e+08 Ops	
+   + nn.SpatialMaxPooling               : 7.9488e+05 Ops	
+     Total                              : 1.4302e+09 Ops	
+===============================================================================================	
+Profiling models/alexnetowt.lua, 1000 iterations	
+ [======================================== 1000/1000 ==================================>]  Tot: 1m3s | Step: 72ms       
+   Forward average time on THIS CPU : 63.17 ms	
+   Performance for THIS CPU         : 22.64 G-Ops/s
+

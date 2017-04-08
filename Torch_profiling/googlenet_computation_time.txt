@@ -1,0 +1,201 @@
+Building models/googlenet.lua model 
+	
+Operations estimation for image size: 256 x 256	
+
+-----------------------------------------------------------------------------------------------	
+S.No. Module Name                       Input Resolution     Neurons             Ops     % Ops	
+===============================================================================================	
+    1 nn.Sequential                    1 x 3 x 256 x 256      196608               0    0.0000	
+    2 nn.SpatialConvolution            1 x 3 x 256 x 256      196608       309329920    7.4266	
+    3 nn.ReLU                         1 x 64 x 128 x 128     1048576         1048576    0.0252	
+    4 nn.SpatialMaxPooling            1 x 64 x 128 x 128     1048576         2359296    0.0566	
+    5 nn.SpatialConvolution             1 x 64 x 64 x 64      262144        33816576    0.8119	
+    6 nn.ReLU                           1 x 64 x 64 x 64      262144          262144    0.0063	
+    7 nn.SpatialConvolution             1 x 64 x 64 x 64      262144       906756096   21.7701	
+    8 nn.ReLU                          1 x 192 x 64 x 64      786432          786432    0.0189	
+    9 nn.SpatialMaxPooling             1 x 192 x 64 x 64      786432         1769472    0.0425	
+   10 nn.Concat                        1 x 192 x 32 x 32      196608               0    0.0000	
+   11 nn.Sequential                    1 x 192 x 32 x 32      196608               0    0.0000	
+   12 nn.SpatialConvolution            1 x 192 x 32 x 32      196608        25231360    0.6058	
+   13 nn.ReLU                           1 x 64 x 32 x 32       65536           65536    0.0016	
+   14 nn.Sequential                    1 x 192 x 32 x 32      196608               0    0.0000	
+   15 nn.SpatialConvolution            1 x 192 x 32 x 32      196608        37847040    0.9087	
+   16 nn.ReLU                           1 x 96 x 32 x 32       98304           98304    0.0024	
+   17 nn.SpatialConvolution             1 x 96 x 32 x 32       98304       226623488    5.4410	
+   18 nn.ReLU                          1 x 128 x 32 x 32      131072          131072    0.0031	
+   19 nn.Sequential                    1 x 192 x 32 x 32      196608               0    0.0000	
+   20 nn.SpatialConvolution            1 x 192 x 32 x 32      196608         6307840    0.1514	
+   21 nn.ReLU                           1 x 16 x 32 x 32       16384           16384    0.0004	
+   22 nn.SpatialConvolution             1 x 16 x 32 x 32       16384        26247168    0.6302	
+   23 nn.ReLU                           1 x 32 x 32 x 32       32768           32768    0.0008	
+   24 nn.Sequential                    1 x 192 x 32 x 32      196608               0    0.0000	
+   25 nn.SpatialMaxPooling             1 x 192 x 32 x 32      196608         1769472    0.0425	
+   26 nn.SpatialConvolution            1 x 192 x 32 x 32      196608        12615680    0.3029	
+   27 nn.ReLU                           1 x 32 x 32 x 32       32768           32768    0.0008	
+   28 nn.Concat                        1 x 256 x 32 x 32      262144               0    0.0000	
+   29 nn.Sequential                    1 x 256 x 32 x 32      262144               0    0.0000	
+   30 nn.SpatialConvolution            1 x 256 x 32 x 32      262144        67239936    1.6143	
+   31 nn.ReLU                          1 x 128 x 32 x 32      131072          131072    0.0031	
+   32 nn.Sequential                    1 x 256 x 32 x 32      262144               0    0.0000	
+   33 nn.SpatialConvolution            1 x 256 x 32 x 32      262144        67239936    1.6143	
+   34 nn.ReLU                          1 x 128 x 32 x 32      131072          131072    0.0031	
+   35 nn.SpatialConvolution            1 x 128 x 32 x 32      131072       453181440   10.8803	
+   36 nn.ReLU                          1 x 192 x 32 x 32      196608          196608    0.0047	
+   37 nn.Sequential                    1 x 256 x 32 x 32      262144               0    0.0000	
+   38 nn.SpatialConvolution            1 x 256 x 32 x 32      262144        16809984    0.4036	
+   39 nn.ReLU                           1 x 32 x 32 x 32       32768           32768    0.0008	
+   40 nn.SpatialConvolution             1 x 32 x 32 x 32       32768       157384704    3.7786	
+   41 nn.ReLU                           1 x 96 x 32 x 32       98304           98304    0.0024	
+   42 nn.Sequential                    1 x 256 x 32 x 32      262144               0    0.0000	
+   43 nn.SpatialMaxPooling             1 x 256 x 32 x 32      262144         2359296    0.0566	
+   44 nn.SpatialConvolution            1 x 256 x 32 x 32      262144        33619968    0.8072	
+   45 nn.ReLU                           1 x 64 x 32 x 32       65536           65536    0.0016	
+   46 nn.SpatialMaxPooling             1 x 480 x 32 x 32      491520         1105920    0.0266	
+   47 nn.Concat                        1 x 480 x 16 x 16      122880               0    0.0000	
+   48 nn.Sequential                    1 x 480 x 16 x 16      122880               0    0.0000	
+   49 nn.SpatialConvolution            1 x 480 x 16 x 16      122880        47235072    1.1341	
+   50 nn.ReLU                          1 x 192 x 16 x 16       49152           49152    0.0012	
+   51 nn.Sequential                    1 x 480 x 16 x 16      122880               0    0.0000	
+   52 nn.SpatialConvolution            1 x 480 x 16 x 16      122880        23617536    0.5670	
+   53 nn.ReLU                           1 x 96 x 16 x 16       24576           24576    0.0006	
+   54 nn.SpatialConvolution             1 x 96 x 16 x 16       24576        92065792    2.2104	
+   55 nn.ReLU                          1 x 208 x 16 x 16       53248           53248    0.0013	
+   56 nn.Sequential                    1 x 480 x 16 x 16      122880               0    0.0000	
+   57 nn.SpatialConvolution            1 x 480 x 16 x 16      122880         3936256    0.0945	
+   58 nn.ReLU                           1 x 16 x 16 x 16        4096            4096    0.0001	
+   59 nn.SpatialConvolution             1 x 16 x 16 x 16        4096         9842688    0.2363	
+   60 nn.ReLU                           1 x 48 x 16 x 16       12288           12288    0.0003	
+   61 nn.Sequential                    1 x 480 x 16 x 16      122880               0    0.0000	
+   62 nn.SpatialMaxPooling             1 x 480 x 16 x 16      122880         1105920    0.0266	
+   63 nn.SpatialConvolution            1 x 480 x 16 x 16      122880        15745024    0.3780	
+   64 nn.ReLU                           1 x 64 x 16 x 16       16384           16384    0.0004	
+   65 nn.Concat                        1 x 512 x 16 x 16      131072               0    0.0000	
+   66 nn.Sequential                    1 x 512 x 16 x 16      131072               0    0.0000	
+   67 nn.SpatialConvolution            1 x 512 x 16 x 16      131072        41984000    1.0080	
+   68 nn.ReLU                          1 x 160 x 16 x 16       40960           40960    0.0010	
+   69 nn.Sequential                    1 x 512 x 16 x 16      131072               0    0.0000	
+   70 nn.SpatialConvolution            1 x 512 x 16 x 16      131072        29388800    0.7056	
+   71 nn.ReLU                          1 x 112 x 16 x 16       28672           28672    0.0007	
+   72 nn.SpatialConvolution            1 x 112 x 16 x 16       28672       115662848    2.7769	
+   73 nn.ReLU                          1 x 224 x 16 x 16       57344           57344    0.0014	
+   74 nn.Sequential                    1 x 512 x 16 x 16      131072               0    0.0000	
+   75 nn.SpatialConvolution            1 x 512 x 16 x 16      131072         6297600    0.1512	
+   76 nn.ReLU                           1 x 24 x 16 x 16        6144            6144    0.0001	
+   77 nn.SpatialConvolution             1 x 24 x 16 x 16        6144        19677184    0.4724	
+   78 nn.ReLU                           1 x 64 x 16 x 16       16384           16384    0.0004	
+   79 nn.Sequential                    1 x 512 x 16 x 16      131072               0    0.0000	
+   80 nn.SpatialMaxPooling             1 x 512 x 16 x 16      131072         1179648    0.0283	
+   81 nn.SpatialConvolution            1 x 512 x 16 x 16      131072        16793600    0.4032	
+   82 nn.ReLU                           1 x 64 x 16 x 16       16384           16384    0.0004	
+   83 nn.Concat                        1 x 512 x 16 x 16      131072               0    0.0000	
+   84 nn.Sequential                    1 x 512 x 16 x 16      131072               0    0.0000	
+   85 nn.SpatialConvolution            1 x 512 x 16 x 16      131072        33587200    0.8064	
+   86 nn.ReLU                          1 x 128 x 16 x 16       32768           32768    0.0008	
+   87 nn.Sequential                    1 x 512 x 16 x 16      131072               0    0.0000	
+   88 nn.SpatialConvolution            1 x 512 x 16 x 16      131072        33587200    0.8064	
+   89 nn.ReLU                          1 x 128 x 16 x 16       32768           32768    0.0008	
+   90 nn.SpatialConvolution            1 x 128 x 16 x 16       32768       151060480    3.6268	
+   91 nn.ReLU                          1 x 256 x 16 x 16       65536           65536    0.0016	
+   92 nn.Sequential                    1 x 512 x 16 x 16      131072               0    0.0000	
+   93 nn.SpatialConvolution            1 x 512 x 16 x 16      131072         6297600    0.1512	
+   94 nn.ReLU                           1 x 24 x 16 x 16        6144            6144    0.0001	
+   95 nn.SpatialConvolution             1 x 24 x 16 x 16        6144        19677184    0.4724	
+   96 nn.ReLU                           1 x 64 x 16 x 16       16384           16384    0.0004	
+   97 nn.Sequential                    1 x 512 x 16 x 16      131072               0    0.0000	
+   98 nn.SpatialMaxPooling             1 x 512 x 16 x 16      131072         1179648    0.0283	
+   99 nn.SpatialConvolution            1 x 512 x 16 x 16      131072        16793600    0.4032	
+  100 nn.ReLU                           1 x 64 x 16 x 16       16384           16384    0.0004	
+  101 nn.Concat                        1 x 512 x 16 x 16      131072               0    0.0000	
+  102 nn.Sequential                    1 x 512 x 16 x 16      131072               0    0.0000	
+  103 nn.SpatialConvolution            1 x 512 x 16 x 16      131072        29388800    0.7056	
+  104 nn.ReLU                          1 x 112 x 16 x 16       28672           28672    0.0007	
+  105 nn.Sequential                    1 x 512 x 16 x 16      131072               0    0.0000	
+  106 nn.SpatialConvolution            1 x 512 x 16 x 16      131072        37785600    0.9072	
+  107 nn.ReLU                          1 x 144 x 16 x 16       36864           36864    0.0009	
+  108 nn.SpatialConvolution            1 x 144 x 16 x 16       36864       191176704    4.5899	
+  109 nn.ReLU                          1 x 288 x 16 x 16       73728           73728    0.0018	
+  110 nn.Sequential                    1 x 512 x 16 x 16      131072               0    0.0000	
+  111 nn.SpatialConvolution            1 x 512 x 16 x 16      131072         8396800    0.2016	
+  112 nn.ReLU                           1 x 32 x 16 x 16        8192            8192    0.0002	
+  113 nn.SpatialConvolution             1 x 32 x 16 x 16        8192        26230784    0.6298	
+  114 nn.ReLU                           1 x 64 x 16 x 16       16384           16384    0.0004	
+  115 nn.Sequential                    1 x 512 x 16 x 16      131072               0    0.0000	
+  116 nn.SpatialMaxPooling             1 x 512 x 16 x 16      131072         1179648    0.0283	
+  117 nn.SpatialConvolution            1 x 512 x 16 x 16      131072        16793600    0.4032	
+  118 nn.ReLU                           1 x 64 x 16 x 16       16384           16384    0.0004	
+  119 nn.Concat                        1 x 528 x 16 x 16      135168               0    0.0000	
+  120 nn.Sequential                    1 x 528 x 16 x 16      135168               0    0.0000	
+  121 nn.SpatialConvolution            1 x 528 x 16 x 16      135168        69271552    1.6631	
+  122 nn.ReLU                          1 x 256 x 16 x 16       65536           65536    0.0016	
+  123 nn.Sequential                    1 x 528 x 16 x 16      135168               0    0.0000	
+  124 nn.SpatialConvolution            1 x 528 x 16 x 16      135168        43294720    1.0395	
+  125 nn.ReLU                          1 x 160 x 16 x 16       40960           40960    0.0010	
+  126 nn.SpatialConvolution            1 x 160 x 16 x 16       40960       236011520    5.6663	
+  127 nn.ReLU                          1 x 320 x 16 x 16       81920           81920    0.0020	
+  128 nn.Sequential                    1 x 528 x 16 x 16      135168               0    0.0000	
+  129 nn.SpatialConvolution            1 x 528 x 16 x 16      135168         8658944    0.2079	
+  130 nn.ReLU                           1 x 32 x 16 x 16        8192            8192    0.0002	
+  131 nn.SpatialConvolution             1 x 32 x 16 x 16        8192        52461568    1.2595	
+  132 nn.ReLU                          1 x 128 x 16 x 16       32768           32768    0.0008	
+  133 nn.Sequential                    1 x 528 x 16 x 16      135168               0    0.0000	
+  134 nn.SpatialMaxPooling             1 x 528 x 16 x 16      135168         1216512    0.0292	
+  135 nn.SpatialConvolution            1 x 528 x 16 x 16      135168        34635776    0.8316	
+  136 nn.ReLU                          1 x 128 x 16 x 16       32768           32768    0.0008	
+  137 nn.SpatialMaxPooling             1 x 832 x 16 x 16      212992          479232    0.0115	
+  138 nn.Concat                          1 x 832 x 8 x 8       53248               0    0.0000	
+  139 nn.Sequential                      1 x 832 x 8 x 8       53248               0    0.0000	
+  140 nn.SpatialConvolution              1 x 832 x 8 x 8       53248        27279360    0.6549	
+  141 nn.ReLU                            1 x 256 x 8 x 8       16384           16384    0.0004	
+  142 nn.Sequential                      1 x 832 x 8 x 8       53248               0    0.0000	
+  143 nn.SpatialConvolution              1 x 832 x 8 x 8       53248        17049600    0.4093	
+  144 nn.ReLU                            1 x 160 x 8 x 8       10240           10240    0.0002	
+  145 nn.SpatialConvolution              1 x 160 x 8 x 8       10240        59002880    1.4166	
+  146 nn.ReLU                            1 x 320 x 8 x 8       20480           20480    0.0005	
+  147 nn.Sequential                      1 x 832 x 8 x 8       53248               0    0.0000	
+  148 nn.SpatialConvolution              1 x 832 x 8 x 8       53248         3409920    0.0819	
+  149 nn.ReLU                             1 x 32 x 8 x 8        2048            2048    0.0000	
+  150 nn.SpatialConvolution               1 x 32 x 8 x 8        2048        13115392    0.3149	
+  151 nn.ReLU                            1 x 128 x 8 x 8        8192            8192    0.0002	
+  152 nn.Sequential                      1 x 832 x 8 x 8       53248               0    0.0000	
+  153 nn.SpatialMaxPooling               1 x 832 x 8 x 8       53248          479232    0.0115	
+  154 nn.SpatialConvolution              1 x 832 x 8 x 8       53248        13639680    0.3275	
+  155 nn.ReLU                            1 x 128 x 8 x 8        8192            8192    0.0002	
+  156 nn.Concat                          1 x 832 x 8 x 8       53248               0    0.0000	
+  157 nn.Sequential                      1 x 832 x 8 x 8       53248               0    0.0000	
+  158 nn.SpatialConvolution              1 x 832 x 8 x 8       53248        40919040    0.9824	
+  159 nn.ReLU                            1 x 384 x 8 x 8       24576           24576    0.0006	
+  160 nn.Sequential                      1 x 832 x 8 x 8       53248               0    0.0000	
+  161 nn.SpatialConvolution              1 x 832 x 8 x 8       53248        20459520    0.4912	
+  162 nn.ReLU                            1 x 192 x 8 x 8       12288           12288    0.0003	
+  163 nn.SpatialConvolution              1 x 192 x 8 x 8       12288        84959232    2.0398	
+  164 nn.ReLU                            1 x 384 x 8 x 8       24576           24576    0.0006	
+  165 nn.Sequential                      1 x 832 x 8 x 8       53248               0    0.0000	
+  166 nn.SpatialConvolution              1 x 832 x 8 x 8       53248         5114880    0.1228	
+  167 nn.ReLU                             1 x 48 x 8 x 8        3072            3072    0.0001	
+  168 nn.SpatialConvolution               1 x 48 x 8 x 8        3072        19668992    0.4722	
+  169 nn.ReLU                            1 x 128 x 8 x 8        8192            8192    0.0002	
+  170 nn.Sequential                      1 x 832 x 8 x 8       53248               0    0.0000	
+  171 nn.SpatialMaxPooling               1 x 832 x 8 x 8       53248          479232    0.0115	
+  172 nn.SpatialConvolution              1 x 832 x 8 x 8       53248        13639680    0.3275	
+  173 nn.ReLU                            1 x 128 x 8 x 8        8192            8192    0.0002	
+  174 nn.SpatialAveragePooling          1 x 1024 x 8 x 8       65536          200704    0.0048	
+  175 nn.View                           1 x 1024 x 2 x 2        4096               0    0.0000	
+  176 nn.Linear                                 4 x 1024        4096         8196000    0.1968	
+  177 nn.ReLU                                   4 x 1000        4000            4000    0.0001	
+-----------------------------------------------------------------------------------------------	
+   Total number of trainable parameters : 6998552 	
+   Total number of neurons              : 20416416	
+-----------------------------------------------------------------------------------------------	
+* Operations per common module *	
+   + nn.ReLU                            : 4.2178e+06 Ops	
+   + nn.Linear                          : 8.1960e+06 Ops	
+   + nn.SpatialConvolution              : 4.1359e+09 Ops	
+   + nn.SpatialMaxPooling               : 1.6663e+07 Ops	
+   + nn.SpatialAveragePooling           : 2.0070e+05 Ops	
+     Total                              : 4.1651e+09 Ops	
+===============================================================================================	
+Profiling models/googlenet.lua, 1000 iterations	
+ [==================== 1000/1000 ==============>]  Tot: 3m39s | Step: 223ms     
+   Forward average time on THIS CPU : 219.66 ms	
+   Performance for THIS CPU         : 18.96 G-Ops/s
+
