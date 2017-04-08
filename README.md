@@ -1,6 +1,5 @@
 # Caffe_Tutorial
 Step by step implementation of caffe model
-
 #Readme file 
 
 DATASET:
@@ -188,6 +187,15 @@ Now we need to test our model.
 Copy "testing.py" and the test image "image.jpg" to "examples/tutorials" folder.
  
 The output will be the predicted class with the prediction rate.
+
+$ python examples/tutorials/testing.py >> examples/tutorials/result2.txt
+
+
+For trained model please follow the below link.
+
+https://drive.google.com/drive/u/1/folders/0BwFrxFBC9NzYME1oUU9UaWcxMkU
+
+
 
  
 
