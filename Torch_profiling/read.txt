@@ -1,0 +1,6 @@
+# Folder contains the torch profiling results for different models
+!) AlexnetOWT
+2) Googlenet
+3) Simple model generated in Torch by me.
+
+The profiling result is just for testing one image.
