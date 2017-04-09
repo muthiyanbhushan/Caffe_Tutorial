@@ -2,6 +2,8 @@
 Step by step implementation of caffe model
 #Readme file 
 
+#Readme file 
+
 DATASET:
 	Dataset is a collection of samples:
 	A dataset is composed of 
@@ -13,8 +15,9 @@ DATASET:
 		data = images
 		labels = class_name
 
-create separate directory for each image dataset
-by following commands
+create separate directory for each image dataset by following commands
+
+I am training the model for 3 different classes.
 
 $ mkdir class1_dataset
 $ mkdir class2_dataset
@@ -30,7 +33,7 @@ $ ./download_image1.sh
 
 press ctrl + c to exit the script file
 
-It will download the dataset for class 1.
+It will download the image dataset for class 1 from the given url.
 
 delete the .sh file from the directory and store only the images in it.
 
@@ -156,6 +159,16 @@ I have used Torch to do profiling of different models.
 
 "train_model.prototxt" defines your network model to train.
 
+For Alexnet model you need to have two files.
+	1) mean.binaryproto
+	2) lmdb path.
+
+--why to have the mean of the images ?
+ans: Mean is what will be subtracted from your input data to center it. For neural
+networks the data need to have zero mean, while the input images usually have positive
+mean, hence the need of the subtraction. The mean subtracted should be the same that
+was used for training, so using mean from the file associated with the model is correct.
+
 
 Copy "train.sh" file in "examples/tutorials" folder.
 
@@ -172,12 +185,7 @@ $ ./make_mean.sh
 
 This will create the image mean from the lmdb files.
 
---why to have the mean of the images ?
-ans: Mean is what will be subtracted from your input data to center it. For neural
-networks the data need to have zero mean, while the input images usually have positive
-mean, hence the need of the subtraction. The mean subtracted should be the same that
-was used for training, so using mean from the file associated with the model is correct.
- 
+
 $ python examples/tutorials/con_binary_to_npy.py examples/tutorials/mean.binaryproto examples/tutorials/out.npy
 
 This will create the .npy format for the mean file and will be given to the testing model.
@@ -190,10 +198,25 @@ The output will be the predicted class with the prediction rate.
 
 $ python examples/tutorials/testing.py >> examples/tutorials/result2.txt
 
-
 For trained model please follow the below link.
 
 https://drive.google.com/drive/u/1/folders/0BwFrxFBC9NzYME1oUU9UaWcxMkU
+
+
+
+Memory requirements in CNN: 
+	While training the CNN the memory requirement goes high depending on the input dimension. This is because of the activation and the error layers of the CNN. The first few layers are the main factor to decide the memory requirement of the model.
+
+Memory reduction techniques:
+	1) Use large strides in convolution layers.
+	2) Use of Pooling layers.
+	3) Reduce the batch size. This can significantly reduce the 		   memory requirement for the model. This will increase the 		   training time.
+
+How to increase the accuracy ?
+Ans: We can do it in different ways:
+1) Increase the complexity of the model.
+2) Use models which are known to have higher prediction accuracy e.g: Googlenet.
+
 
 
 
